@@ -27,7 +27,23 @@ test("[3,2,texto] => No se pudo resolver el polinomio",
     }
 )
 
+//Discriminante > 0
+test("[1,3,2] => 𝑟𝑎𝑖𝑧 1 = −2, 𝑟𝑎𝑖𝑧 2 = −1",
+    () => {
+        expect(polinomio(1,3,2)).toBe("[-2.0,-1.0]")
+    }
+)
 
-/**
- RF
- */
+//Discriminante < 0
+test("[1,-2,5] => 𝑟𝑎𝑖𝑧 1 = (2-4i)/2; raiz2 = (2+4i)/2",
+    () => {
+        expect(polinomio(1,-2,5)).toBe("[(2-4i)/2,(2+4i)/2]")
+    }
+)
+
+//Discriminnate = 0
+test("[2,-8,8] => raiz=2",
+    () => {
+        expect(polinomio(2,-8,8)).toBe("2.0")
+    }
+)
